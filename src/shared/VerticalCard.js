@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 
-export default  function VerticalCard(props){
+export default function VerticalCard(props){
     return (
         <View style={styles.card}>
             <View style={styles.cardContent}>

@@ -20,13 +20,16 @@ export const Home = ({navigation}) => {
         <View style={globalStyles.container}>
             <Text style={globalStyles.titleText}>Welcome to the home page</Text>
 
-            <ModalComponent/>
+            <ModalComponent>
+                <Text style={globalStyles.text}>Here's some good luuuuuv !</Text>
+                <Image source={require('../../assets/images/toto-logo.png')} style={styles.modalImage}/>
+            </ModalComponent>
 
             <FlatList data={movies} renderItem={({ item }) => (
                 <TouchableOpacity onPress={()=>navigation.navigate('Details', {item})}>
                     <Card>
                         <Text style={globalStyles.text}>{item.title}</Text>
-                        <Image source={require('../../assets/images/soot-chihiro.png')} style={styles.image}/>
+                        <Image source={require('../../assets/images/soot-chihiro.png')} style={globalStyles.imageDetails}/>
                     </Card>
                 </TouchableOpacity>
             )}
@@ -37,8 +40,8 @@ export const Home = ({navigation}) => {
 
 
 const styles = StyleSheet.create({
-    image:{
-        width:50,
-        height:50
+    modalImage:{
+        width:300,
+        height:400,
     }
 })

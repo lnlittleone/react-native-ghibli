@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import {StyleSheet, Text, View, FlatList, Image, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, FlatList, Image, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import {globalStyles} from "../../styles/global";
 import ReviewForm from "./ReviewForm";
 import VerticalCard from "../shared/VerticalCard";
+import ModalComponent from "./ModalComponent";
 
 export const About = () => {
 
@@ -20,20 +21,23 @@ export const About = () => {
             <Text style={globalStyles.titleText}>About Ghibli App</Text>
             <Text style={globalStyles.text}>This app is a discovery of React native development. All the data retrieved for the needs of this app are from the Ghibli API.</Text>
 
-            <ScrollView>
-                <FlatList
-                    data={reviews}
-                    renderItem={({ item }) => (
-                        <VerticalCard>
-                            <Text style={styles.name}>{item.name}</Text>
-                            <Text style={globalStyles.text}>{item.comment}</Text>
-                            <Image source={require('../../assets/images/toto-love.png')} style={styles.image}/>
-                        </VerticalCard> )}
-                    keyExtractor={item => item.id} />
+            <ModalComponent>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss()}>
+                    <View style={globalStyles.container}>
+                        <ReviewForm addReview={addReview}/>
+                    </View>
+                </TouchableWithoutFeedback>
+            </ModalComponent>
 
-                <ReviewForm addReview={addReview}/>
-            </ScrollView>
-
+            <FlatList
+                data={reviews}
+                renderItem={({ item }) => (
+                    <VerticalCard>
+                        <Text style={styles.name}>{item.name}</Text>
+                        <Text style={globalStyles.text}>{item.comment}</Text>
+                        <Image source={require('../../assets/images/toto-love.png')} style={styles.image}/>
+                    </VerticalCard> )}
+                keyExtractor={item => item.key} />
         </View>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Home} from "../components/Home";
-import {MovieDetails} from "../components/MovieDetails";
+import {MovieDetails} from "../components/Details/MovieDetails";
 import {createStackNavigator} from "@react-navigation/stack";
 import Header from '../shared/Header'
 
@@ -19,7 +19,7 @@ export const HomeStack = () => {
                 name="Details"
                 component={MovieDetails}
                 options={{
-                    title: 'Movie details',
+                    title: 'MovieDetails details',
                     headerStyle:{
                         backgroundColor: '#ECE4D3',
                     }

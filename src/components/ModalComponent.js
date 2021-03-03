@@ -1,9 +1,8 @@
 import React, { useState} from "react";
-import {Button, Image, Modal, Text, View, StyleSheet} from "react-native";
+import {Button, Modal, View, StyleSheet} from "react-native";
 import {MaterialIcons} from "@expo/vector-icons";
-import {globalStyles} from "../../styles/global";
 
-export default function ModalComponent(){
+export default function ModalComponent(props){
     const [modalOpen, setModalOpen] = useState(false)
 
     return (
@@ -15,13 +14,12 @@ export default function ModalComponent(){
                         size={24}
                         onPress={()=>setModalOpen(false)}
                     />
-                    <Text style={globalStyles.text}>Here's some good luuuuuv !</Text>
-                    <Image source={require('../../assets/images/toto-logo.png')} style={styles.modalImage}/>
+                    {props.children}
                 </View>
             </Modal>
 
             <Button
-                title="Want some love ?"
+                title="Click me"
                 onPress={()=>setModalOpen(true)}
                 color="maroon"
             />
@@ -33,9 +31,5 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    modalImage:{
-        width:300,
-        height:400,
     }
 })
