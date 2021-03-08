@@ -14,6 +14,8 @@ export const MovieDetails = ({route}) => {
                 <Text style={globalStyles.titleText}>{item.original_title}</Text>
                 <Text style={globalStyles.titleText}>{item.title}</Text>
                 <Text style={globalStyles.text}>{item.release_date}</Text>
+                <Text style={globalStyles.text}>Director : {item.director}</Text>
+                <Text style={globalStyles.text}>Producer : {item.producer}</Text>
                 <Text style={globalStyles.text}>{item.description}</Text>
             </VerticalCard>
         </View>

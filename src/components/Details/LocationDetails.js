@@ -20,6 +20,7 @@ export const LocationDetails = ({route}) => {
         getAllResidents()
     },[])
 
+    console.log(residents)
     return (
         <View style={globalStyles.container}>
             <VerticalCard>
@@ -27,11 +28,20 @@ export const LocationDetails = ({route}) => {
                 <Text style={globalStyles.text}>Climate : {item.climate}</Text>
                 <Text style={globalStyles.text}>Terrain : {item.terrain}</Text>
                 <Text style={globalStyles.text}>Suface water : {item.surface_water}</Text>
+                <Text style={globalStyles.text}>Residents :</Text>
 
+                {residents === []
+                    ? <Text style={globalStyles.text}>N/A</Text>
+                    :<FlatList
+                        data={residents}
+                        renderItem={({ item }) => (
+                            <Text style={globalStyles.text}> - {item.name}</Text>)}
+                        keyExtractor={item => item.id} />
+                }
                 <FlatList
                     data={residents}
                     renderItem={({ item }) => (
-                            <Text style={globalStyles.text}>{item.name}</Text>)}
+                            <Text style={globalStyles.text}> - {item.name}</Text>)}
                     keyExtractor={item => item.id} />
 
             </VerticalCard>

@@ -21,7 +21,7 @@ export const About = () => {
             <Text style={globalStyles.titleText}>About Ghibli App</Text>
             <Text style={globalStyles.text}>This app is a discovery of React native development. All the data retrieved for the needs of this app are from the Ghibli API.</Text>
 
-            <ModalComponent>
+            <ModalComponent title="Leave a comment">
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss()}>
                     <View style={globalStyles.container}>
                         <ReviewForm addReview={addReview}/>

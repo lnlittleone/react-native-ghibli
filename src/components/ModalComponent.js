@@ -1,6 +1,7 @@
 import React, { useState} from "react";
-import {Button, Modal, View, StyleSheet} from "react-native";
+import {Modal, View, StyleSheet} from "react-native";
 import {MaterialIcons} from "@expo/vector-icons";
+import FlatButton from "../shared/Button";
 
 export default function ModalComponent(props){
     const [modalOpen, setModalOpen] = useState(false)
@@ -18,10 +19,9 @@ export default function ModalComponent(props){
                 </View>
             </Modal>
 
-            <Button
-                title="Click me"
+            <FlatButton
+                text={props.title}
                 onPress={()=>setModalOpen(true)}
-                color="maroon"
             />
         </View>
 )}

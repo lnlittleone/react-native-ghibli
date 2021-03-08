@@ -14,6 +14,7 @@ export default function FlatButton({text, onPress}){
 
 const styles = StyleSheet.create({
     button:{
+        elevation:3,
         borderRadius:8,
         paddingVertical:14,
         paddingHorizontal:10,
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
         shadowColor: '#333',
         shadowOpacity: 0.3,
         shadowRadius: 2,
+        margin:5,
     },
     buttonText:{
         color:'#fff',

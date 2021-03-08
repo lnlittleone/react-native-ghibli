@@ -20,7 +20,7 @@ export const Home = ({navigation}) => {
         <View style={globalStyles.container}>
             <Text style={globalStyles.titleText}>Welcome to the home page</Text>
 
-            <ModalComponent>
+            <ModalComponent title={"Want some luv ?"}>
                 <Text style={globalStyles.text}>Here's some good luuuuuv !</Text>
                 <Image source={require('../../assets/images/toto-logo.png')} style={styles.modalImage}/>
             </ModalComponent>
