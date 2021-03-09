@@ -20,7 +20,6 @@ export const LocationDetails = ({route}) => {
         getAllResidents()
     },[])
 
-    console.log(residents)
     return (
         <View style={globalStyles.container}>
             <VerticalCard>
